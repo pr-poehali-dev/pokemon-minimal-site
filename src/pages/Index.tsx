@@ -22,84 +22,84 @@ const pokemonData: Pokemon[] = [
     id: 1,
     name: 'Бульбазавр',
     types: ['Трава', 'Яд'],
-    image: '🌱',
+    image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png',
     evolution: { to: 'Ивизавр', level: 16 }
   },
   {
     id: 2,
     name: 'Ивизавр',
     types: ['Трава', 'Яд'],
-    image: '🌿',
+    image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/2.png',
     evolution: { from: 'Бульбазавр', to: 'Венузавр', level: 32 }
   },
   {
     id: 3,
     name: 'Венузавр',
     types: ['Трава', 'Яд'],
-    image: '🌺',
+    image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/3.png',
     evolution: { from: 'Ивизавр' }
   },
   {
     id: 4,
     name: 'Чармандер',
     types: ['Огонь'],
-    image: '🔥',
+    image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/4.png',
     evolution: { to: 'Чармелеон', level: 16 }
   },
   {
     id: 5,
     name: 'Чармелеон',
     types: ['Огонь'],
-    image: '🦎',
+    image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/5.png',
     evolution: { from: 'Чармандер', to: 'Чаризард', level: 36 }
   },
   {
     id: 6,
     name: 'Чаризард',
     types: ['Огонь', 'Полет'],
-    image: '🐉',
+    image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/6.png',
     evolution: { from: 'Чармелеон' }
   },
   {
     id: 7,
     name: 'Сквиртл',
     types: ['Вода'],
-    image: '💧',
+    image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/7.png',
     evolution: { to: 'Вартортл', level: 16 }
   },
   {
     id: 8,
     name: 'Вартортл',
     types: ['Вода'],
-    image: '🐢',
+    image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/8.png',
     evolution: { from: 'Сквиртл', to: 'Бластойз', level: 36 }
   },
   {
     id: 9,
     name: 'Бластойз',
     types: ['Вода'],
-    image: '🌊',
+    image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/9.png',
     evolution: { from: 'Вартортл' }
   },
   {
     id: 25,
     name: 'Пикачу',
     types: ['Электро'],
-    image: '⚡',
+    image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/25.png',
     evolution: { from: 'Пичу', to: 'Райчу' }
   },
   {
     id: 133,
     name: 'Иви',
     types: ['Нормал'],
-    image: '🦊',
+    image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/133.png',
     evolution: { to: 'Вапореон/Джолтеон/Флареон' }
   },
   {
     id: 150,
     name: 'Мьюту',
     types: ['Психо'],
-    image: '🧠',
+    image: 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/150.png',
   }
 ];
 
@@ -168,7 +168,13 @@ const Index = () => {
                   className="hover:shadow-xl transition-all duration-300 hover:scale-105 cursor-pointer border-2"
                 >
                   <CardContent className="p-6 text-center space-y-4">
-                    <div className="text-7xl mb-4">{pokemon.image}</div>
+                    <div className="w-full h-48 flex items-center justify-center mb-4">
+                      <img 
+                        src={pokemon.image} 
+                        alt={pokemon.name}
+                        className="w-full h-full object-contain"
+                      />
+                    </div>
                     <div className="space-y-2">
                       <div className="text-sm text-muted-foreground font-semibold">
                         #{pokemon.id.toString().padStart(3, '0')}
@@ -210,8 +216,12 @@ const Index = () => {
                         <div className="group relative">
                           <Card className="hover:shadow-2xl transition-all duration-500 hover:scale-110 border-2">
                             <CardContent className="p-6 text-center space-y-3 min-w-[180px]">
-                              <div className="text-6xl mb-2 transform group-hover:scale-125 transition-transform duration-500">
-                                {pokemon.image}
+                              <div className="w-full h-32 flex items-center justify-center mb-2">
+                                <img 
+                                  src={pokemon.image} 
+                                  alt={pokemon.name}
+                                  className="w-full h-full object-contain transform group-hover:scale-125 transition-transform duration-500"
+                                />
                               </div>
                               <div className="text-sm text-muted-foreground font-semibold">
                                 #{pokemon.id.toString().padStart(3, '0')}
@@ -304,7 +314,13 @@ const Index = () => {
                     className="hover:shadow-xl transition-all duration-300 hover:scale-105 cursor-pointer border-2"
                   >
                     <CardContent className="p-6 text-center space-y-4">
-                      <div className="text-7xl mb-4">{pokemon.image}</div>
+                      <div className="w-full h-48 flex items-center justify-center mb-4">
+                        <img 
+                          src={pokemon.image} 
+                          alt={pokemon.name}
+                          className="w-full h-full object-contain"
+                        />
+                      </div>
                       <div className="space-y-2">
                         <div className="text-sm text-muted-foreground font-semibold">
                           #{pokemon.id.toString().padStart(3, '0')}
