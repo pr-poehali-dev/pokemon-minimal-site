@@ -291,20 +291,20 @@ const Index = () => {
                               </div>
                             </CardContent>
                           </Card>
-                          {pokemon.evolution?.level && (
-                            <div className="absolute -bottom-8 left-1/2 -translate-x-1/2 bg-accent text-accent-foreground px-3 py-1 rounded-full text-xs font-semibold whitespace-nowrap">
-                              Ур. {pokemon.evolution.level}
-                            </div>
-                          )}
                         </div>
                         
                         {i < chainPokemon.length - 1 && (
-                          <div className="hidden md:flex flex-col items-center gap-2">
+                          <div className="hidden md:flex flex-col items-center gap-2 relative">
                             <Icon 
                               name="ArrowRight" 
                               size={40} 
                               className="text-primary animate-pulse"
                             />
+                            {pokemon.evolution?.level && (
+                              <div className="bg-accent text-accent-foreground px-3 py-1 rounded-full text-xs font-semibold whitespace-nowrap">
+                                Ур. {pokemon.evolution.level}
+                              </div>
+                            )}
                           </div>
                         )}
                       </div>
