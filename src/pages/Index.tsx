@@ -139,9 +139,32 @@ const Index = () => {
           <h1 className="text-6xl font-bold text-primary mb-2">
             Покедекс
           </h1>
-          <p className="text-xl text-muted-foreground">
-            Исследуй мир покемонов и их эволюции
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            Исследуй мир покемонов и их эволюции. Узнай о типах, способностях и особенностях каждого существа из вселенной Покемон.
           </p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8 max-w-4xl mx-auto">
+            <Card className="border-2">
+              <CardContent className="p-6 text-center space-y-2">
+                <div className="text-4xl mb-2">📚</div>
+                <h3 className="font-bold text-lg">12 Покемонов</h3>
+                <p className="text-sm text-muted-foreground">В нашей базе данных</p>
+              </CardContent>
+            </Card>
+            <Card className="border-2">
+              <CardContent className="p-6 text-center space-y-2">
+                <div className="text-4xl mb-2">🔄</div>
+                <h3 className="font-bold text-lg">3 Цепочки</h3>
+                <p className="text-sm text-muted-foreground">Эволюционных линий</p>
+              </CardContent>
+            </Card>
+            <Card className="border-2">
+              <CardContent className="p-6 text-center space-y-2">
+                <div className="text-4xl mb-2">⚡</div>
+                <h3 className="font-bold text-lg">8 Типов</h3>
+                <p className="text-sm text-muted-foreground">Различных элементов</p>
+              </CardContent>
+            </Card>
+          </div>
         </header>
 
         <Tabs defaultValue="pokedex" className="w-full">
@@ -161,6 +184,16 @@ const Index = () => {
           </TabsList>
 
           <TabsContent value="pokedex" className="space-y-8">
+            <Card className="border-2 bg-gradient-to-r from-primary/5 to-secondary/5">
+              <CardContent className="p-6">
+                <h2 className="text-2xl font-bold mb-3">Что такое Покедекс?</h2>
+                <p className="text-muted-foreground leading-relaxed">
+                  Покедекс — это энциклопедия покемонов, содержащая информацию о каждом существе. 
+                  Здесь ты найдешь данные о типах покемонов, их способностях и эволюционных цепочках. 
+                  Каждый покемон уникален и обладает своими сильными сторонами в бою.
+                </p>
+              </CardContent>
+            </Card>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
               {pokemonData.map((pokemon) => (
                 <Card 
@@ -200,9 +233,28 @@ const Index = () => {
           <TabsContent value="evolutions" className="space-y-12">
             <div className="text-center mb-8">
               <h2 className="text-3xl font-bold mb-2">Цепочки эволюции</h2>
-              <p className="text-muted-foreground">
+              <p className="text-muted-foreground mb-6">
                 Узнай, как покемоны развиваются и становятся сильнее
               </p>
+              <Card className="border-2 bg-gradient-to-r from-accent/10 to-primary/5 max-w-3xl mx-auto">
+                <CardContent className="p-6 text-left">
+                  <h3 className="font-bold text-lg mb-3">Как работает эволюция?</h3>
+                  <div className="space-y-3 text-muted-foreground">
+                    <p>
+                      <strong className="text-foreground">Уровень:</strong> Большинство покемонов эволюционируют при достижении определенного уровня. 
+                      Например, Чармандер становится Чармелеоном на 16 уровне.
+                    </p>
+                    <p>
+                      <strong className="text-foreground">Развитие:</strong> После эволюции покемон получает улучшенные характеристики, 
+                      новые способности и может изменить свой тип.
+                    </p>
+                    <p>
+                      <strong className="text-foreground">Финальная форма:</strong> Последняя стадия эволюции обычно самая мощная 
+                      и не может эволюционировать дальше.
+                    </p>
+                  </div>
+                </CardContent>
+              </Card>
             </div>
 
             {evolutionChains.map((chain, idx) => {
@@ -264,6 +316,33 @@ const Index = () => {
           </TabsContent>
 
           <TabsContent value="search" className="space-y-6">
+            <Card className="border-2 bg-gradient-to-r from-secondary/5 to-accent/5 mb-6">
+              <CardContent className="p-6">
+                <h2 className="text-2xl font-bold mb-3">Типы покемонов</h2>
+                <p className="text-muted-foreground leading-relaxed mb-4">
+                  Каждый покемон принадлежит к одному или двум типам, которые определяют его сильные и слабые стороны в бою. 
+                  Используй фильтр ниже, чтобы найти покемонов по типу.
+                </p>
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-3 text-sm">
+                  <div className="flex items-center gap-2">
+                    <div className="w-3 h-3 rounded-full bg-green-500"></div>
+                    <span><strong>Трава</strong> — контролирует растения</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <div className="w-3 h-3 rounded-full bg-red-500"></div>
+                    <span><strong>Огонь</strong> — управляет пламенем</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <div className="w-3 h-3 rounded-full bg-blue-500"></div>
+                    <span><strong>Вода</strong> — водная стихия</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
+                    <span><strong>Электро</strong> — электричество</span>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
             <div className="max-w-2xl mx-auto space-y-6">
               <div className="relative">
                 <Icon 
